@@ -5,5 +5,8 @@ export class PostSerializer {
   id = "";
 
   @Expose()
-  title = "";
+  username = "";
+ 
+  @Expose()
+  name="";
 }

@@ -9,7 +9,7 @@ const router = Router();
 
 router.post("/", validateReq(CreatePostDto), (req, res) => {
   const post = postsService.createPost(req.body);
-  res.status(201).send(serialize(PostSerializer, post));
+ res.status(201).send(serialize(PostSerializer, post));
 });
 
 export const postsController = router;

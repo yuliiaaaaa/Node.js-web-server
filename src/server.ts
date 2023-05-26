@@ -3,6 +3,12 @@ import morgan from "morgan";
 import { HttpError } from "http-errors";
 import { config } from "./config/config";
 import { postsController } from "./modules/posts/posts.controller";
+import { deleteController } from "./deletes/delete.controller";
+import { getsController } from "./gets/gets.controller";
+import { getsControllerById } from "./gets by id/gets.controller";
+import { putController } from "./Puts/puts.controller";
+
+
 
 export class Server {
   private app = express();
@@ -29,6 +35,10 @@ export class Server {
 
   private initRoutes() {
     this.app.use("/api/posts", postsController);
+    this.app.use("/api/deletes",deleteController);
+    this.app.use("/api/gets",getsController);
+    this.app.use("/api/gets",getsControllerById);
+    this.app.use("/api/puts",putController)
   }
 
   private initErrorHandling() {
